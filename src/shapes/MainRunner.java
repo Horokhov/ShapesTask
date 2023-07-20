@@ -43,14 +43,12 @@ public class MainRunner {
                 shapes.add(new Circle(color, radius, area));
             } else if(shapeType == 3){
                 BasicShape.Color color = BasicShape.getRandomColor();
-                double baseLengthA = BasicShape.getRandomLength();
-                double baseLengthB = BasicShape.getRandomLength();
                 double sideLengthA = BasicShape.getRandomLength();
                 double sideLengthB = BasicShape.getRandomLength();
-                Trapezoid trapezoid = new Trapezoid(color, baseLengthA, baseLengthB, sideLengthA, sideLengthB);
+                double height = BasicShape.getRandomLength();
+                Trapezoid trapezoid = new Trapezoid(color, sideLengthA, sideLengthB);
                 double area = trapezoid.area();
-                double height = trapezoid.calculateHeight();
-                shapes.add(new Trapezoid(color, baseLengthA, baseLengthB, sideLengthA, sideLengthB, area, height));
+                shapes.add(new Trapezoid(color,sideLengthA, sideLengthB, area, height));
             }
 
         }

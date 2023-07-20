@@ -18,7 +18,7 @@ abstract class BasicShape {
 
     public static double getRandomLength(){
         Random random = new Random();
-        return random.nextDouble(100);
+        return random.nextDouble(30);
     }
 
     public BasicShape(Color color){
