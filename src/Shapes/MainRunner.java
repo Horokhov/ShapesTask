@@ -20,7 +20,8 @@ public class MainRunner {
         int numberOfShapes = random.nextInt(5)+5;
 
         for (int i = 0; i < numberOfShapes; i++) {
-            int shapeType = random.nextInt(3);
+            int shapeType = random.nextInt(4);
+
             if(shapeType == 0){
                 BasicShape.Color color = BasicShape.getRandomColor();
                 double sideLength = BasicShape.getRandomLength();
@@ -35,12 +36,22 @@ public class MainRunner {
                 double hypotenuse = triangle.calculateHypotenuse();
                 double area = triangle.area();
                 shapes.add(new Triangle(color, sideLengthA, sideLengthB, hypotenuse, area));
-            } else if (shapeType == 2) {
+            } else if(shapeType == 2) {
                 BasicShape.Color color = BasicShape.getRandomColor();
                 double radius = BasicShape.getRandomLength();
                 Circle circle = new Circle(color, radius);
                 double area = circle.area();
                 shapes.add(new Circle(color, radius, area));
+            } else if(shapeType == 3){
+                BasicShape.Color color = BasicShape.getRandomColor();
+                double baseLengthA = BasicShape.getRandomLength();
+                double baseLengthB = BasicShape.getRandomLength();
+                double sideLengthA = BasicShape.getRandomLength();
+                double sideLengthB = BasicShape.getRandomLength();
+                Trapezoid trapezoid = new Trapezoid(color, baseLengthA, baseLengthB, sideLengthA, sideLengthB);
+                double area = trapezoid.area();
+                double height = trapezoid.calculateHeight();
+                shapes.add(new Trapezoid(color, baseLengthA, baseLengthB, sideLengthA, sideLengthB, area, height));
             }
 
         }
