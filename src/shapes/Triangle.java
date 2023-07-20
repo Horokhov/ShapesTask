@@ -1,6 +1,4 @@
-package Shapes;
-
-import java.util.Random;
+package shapes;
 
 public class Triangle extends BasicShape{
     private double sideLengthA;

@@ -1,6 +1,4 @@
-package Shapes;
-
-import java.util.Random;
+package shapes;
 
 public class Circle extends BasicShape{
     private double radius;
