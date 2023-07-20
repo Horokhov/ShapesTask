@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Random;
 
 public class MainRunner {
+    private static final int square = 0;
+    private static final int triangle = 1;
+    private static final int circle = 2;
+    private static final int trapezoid = 3;
     public static void main(String[] args) {
         List<BasicShape> shapesOutput =  generateRandomShapes();
 
@@ -21,27 +25,19 @@ public class MainRunner {
         for (int i = 0; i < numberOfShapes; i++) {
             int shapeType = random.nextInt(4);
 
-            if(shapeType == 0){
-                BasicShape.Color color = BasicShape.getRandomColor();
-                double sideLength = BasicShape.getRandomLength();
-                Square square = new Square(color,sideLength);
-                double area = square.area();
-                shapes.add(new Square(color, sideLength, area));
-            } else if(shapeType == 1) {
-                BasicShape.Color color = BasicShape.getRandomColor();
-                double sideLengthA = BasicShape.getRandomLength();
-                double sideLengthB = BasicShape.getRandomLength();
-                Triangle triangle = new Triangle(color, sideLengthA, sideLengthB);
-                double hypotenuse = triangle.calculateHypotenuse();
-                double area = triangle.area();
-                shapes.add(new Triangle(color, sideLengthA, sideLengthB, hypotenuse, area));
-            } else if(shapeType == 2) {
+            if(shapeType == square){
+                Square square = createRandomSquare();
+                shapes.add(square);
+            } else if(shapeType == triangle) {
+                Triangle triangle = createRandomTriangle();
+                shapes.add(triangle);
+            } else if(shapeType == circle) {
                 BasicShape.Color color = BasicShape.getRandomColor();
                 double radius = BasicShape.getRandomLength();
                 Circle circle = new Circle(color, radius);
                 double area = circle.area();
                 shapes.add(new Circle(color, radius, area));
-            } else if(shapeType == 3){
+            } else if(shapeType == trapezoid){
                 BasicShape.Color color = BasicShape.getRandomColor();
                 double sideLengthA = BasicShape.getRandomLength();
                 double sideLengthB = BasicShape.getRandomLength();
@@ -53,5 +49,18 @@ public class MainRunner {
 
         }
         return shapes;
+    }
+
+    public static Square createRandomSquare(){
+        BasicShape.Color color = BasicShape.getRandomColor();
+        double sideLength = BasicShape.getRandomLength();
+        return new Square(color, sideLength);
+    }
+
+    public static Triangle createRandomTriangle(){
+        BasicShape.Color color = BasicShape.getRandomColor();
+        double sideLengthA = BasicShape.getRandomLength();
+        double sideLengthB = BasicShape.getRandomLength();
+        return new Triangle(color, sideLengthA, sideLengthB);
     }
 }

@@ -3,13 +3,13 @@ package shapes;
 public class Triangle extends BasicShape{
     private double sideLengthA;
     private double sideLengthB;
-    private double hypotenuse;
     @Override
     public String draw() {
         return "Triangle";
     }
     @Override
     public double area() {
+        double hypotenuse = calculateHypotenuse();
         double s = (sideLengthA + sideLengthB + hypotenuse)/2;
         return Math.sqrt(s * (s - sideLengthA) * (s - sideLengthB) * (s - hypotenuse));
     }
@@ -23,26 +23,8 @@ public class Triangle extends BasicShape{
         this.sideLengthA = sideLengthA;
         this.sideLengthB = sideLengthB;
     }
-
-    public Triangle(Color color, double sideLengthA, double sideLengthB, double hypotenuse, double area) {
-        super(color);
-        this.sideLengthA = sideLengthA;
-        this.sideLengthB = sideLengthB;
-        this.hypotenuse = hypotenuse;
-    }
-
-    public double getSideLengthA(){
-        return sideLengthA;
-    }
-    public double getSideLengthB(){
-        return sideLengthB;
-    }
-    public double getHypotenuse(){
-        return hypotenuse;
-    }
-
     @Override
     public String toString() {
-        return String.format("Shape: Triangle.," + " Area:"+area()+"., Color:"+getColor()+" ., Hypotenuse:"+getHypotenuse()+";");
+        return String.format("Shape: Triangle.," + " Area:"+area()+"., Color:"+getColor()+" ., Hypotenuse:"+calculateHypotenuse()+";");
     }
 }

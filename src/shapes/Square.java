@@ -1,10 +1,7 @@
 package shapes;
 
 public class Square extends BasicShape{
-
     private double sideLength;
-
-    private double area;
     @Override
     public String draw() {
         return "Square";
@@ -13,16 +10,10 @@ public class Square extends BasicShape{
     public double area() {
         return sideLength * sideLength;
     }
-    public Square(Color color, double sideLength, double area) {
-        super(color);
-        this.sideLength = sideLength;
-    }
-
     public Square(Color color, double sideLength) {
         super(color);
         this.sideLength = sideLength;
     }
-
     public double getSideLength(){
         return sideLength;
     }
