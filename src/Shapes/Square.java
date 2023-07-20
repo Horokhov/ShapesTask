@@ -29,6 +29,6 @@ public class Square extends BasicShape{
 
     @Override
     public String toString() {
-        return String.format("Shape: Square.," + " Area:"+area()+"., Color:"+getColor()+" ., Sidelength:"+getSideLength()+".,");
+        return String.format("Shape: Square.," + " Area:"+area()+"., Color:"+getColor()+" ., Sidelength:"+getSideLength()+";");
     }
 }

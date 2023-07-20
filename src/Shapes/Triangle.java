@@ -26,7 +26,7 @@ public class Triangle extends BasicShape{
         this.sideLengthB = sideLengthB;
     }
 
-    public Triangle(Color color, double sideLengthA, double sideLengthB, double hypotenuse) {
+    public Triangle(Color color, double sideLengthA, double sideLengthB, double hypotenuse, double area) {
         super(color);
         this.sideLengthA = sideLengthA;
         this.sideLengthB = sideLengthB;
@@ -45,6 +45,6 @@ public class Triangle extends BasicShape{
 
     @Override
     public String toString() {
-        return String.format("Shape: Triangle.," + " Area:"+area()+"., Color:"+getColor()+" ., Hypotenuse:"+getHypotenuse()+".,");
+        return String.format("Shape: Triangle.," + " Area:"+area()+"., Color:"+getColor()+" ., Hypotenuse:"+getHypotenuse()+";");
     }
 }

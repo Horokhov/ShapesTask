@@ -15,27 +15,26 @@ public class MainRunner {
 
     }
     public static List<BasicShape> generateRandomShapes(){
-
         List<BasicShape> shapes = new ArrayList<>();
         Random random = new Random();
-        int shape = random.nextInt(10);
+        int numberOfShapes = random.nextInt(5)+5;
 
-        for (int i = 0; i < shape; i++) {
-
-            if(shape == 0){
+        for (int i = 0; i < numberOfShapes; i++) {
+            int shapeType = random.nextInt(2);
+            if(shapeType == 0){
                 BasicShape.Color color = BasicShape.getRandomColor();
                 double sideLength = BasicShape.getRandomLength();
                 Square square = new Square(color,sideLength);
                 double area = square.area();
                 shapes.add(new Square(color, sideLength, area));
-            } else if(shape == 1) {
+            } else if(shapeType == 1) {
                 BasicShape.Color color = BasicShape.getRandomColor();
                 double sideLengthA = BasicShape.getRandomLength();
                 double sideLengthB = BasicShape.getRandomLength();
                 Triangle triangle = new Triangle(color, sideLengthA, sideLengthB);
                 double hypotenuse = triangle.calculateHypotenuse();
                 double area = triangle.area();
-                shapes.add(new Triangle(color, sideLengthA, sideLengthB, hypotenuse));
+                shapes.add(new Triangle(color, sideLengthA, sideLengthB, hypotenuse, area));
             }
 
         }
