@@ -14,12 +14,6 @@ public class Circle extends BasicShape{
         super(color);
         this.radius = radius;
     }
-
-    public Circle(Color color, double radius, double area) {
-        super(color);
-        this.radius = radius;
-    }
-
     public double getRadius(){
         return radius;
     }

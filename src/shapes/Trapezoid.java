@@ -4,7 +4,6 @@ public class Trapezoid extends BasicShape{
     private double sideLengthA;
     private double sideLengthB;
     private double height;
-
     @Override
     public String draw() {
         return "Trapezoid";
@@ -13,27 +12,13 @@ public class Trapezoid extends BasicShape{
     public double area() {
         return (sideLengthA + sideLengthB) * height / 2;
     }
-
-    public Trapezoid(Color color, double sideLengthA, double sideLengthB, double area, double height) {
+    public Trapezoid(Color color, double sideLengthA, double sideLengthB, double height) {
         super(color);
         this.sideLengthA = sideLengthA;
         this.sideLengthB = sideLengthB;
         this.height = height;
     }
-
-    public Trapezoid(Color color, double sideLengthA, double sideLengthB) {
-        super(color);
-        this.sideLengthA = sideLengthA;
-        this.sideLengthB = sideLengthB;
-    }
-
-    public double getSideLengthA(){
-        return sideLengthA;
-    }
-    public double getSideLengthB(){
-        return sideLengthB;
-    }
-    public double getHeight(){
+    public double getHeight() {
         return height;
     }
     @Override

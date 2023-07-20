@@ -32,19 +32,11 @@ public class MainRunner {
                 Triangle triangle = createRandomTriangle();
                 shapes.add(triangle);
             } else if(shapeType == circle) {
-                BasicShape.Color color = BasicShape.getRandomColor();
-                double radius = BasicShape.getRandomLength();
-                Circle circle = new Circle(color, radius);
-                double area = circle.area();
-                shapes.add(new Circle(color, radius, area));
+                Circle circle = createRandomCircle();
+                shapes.add(circle);
             } else if(shapeType == trapezoid){
-                BasicShape.Color color = BasicShape.getRandomColor();
-                double sideLengthA = BasicShape.getRandomLength();
-                double sideLengthB = BasicShape.getRandomLength();
-                double height = BasicShape.getRandomLength();
-                Trapezoid trapezoid = new Trapezoid(color, sideLengthA, sideLengthB);
-                double area = trapezoid.area();
-                shapes.add(new Trapezoid(color,sideLengthA, sideLengthB, area, height));
+                Trapezoid trapezoid = createRandomTrapezoid();
+                shapes.add(trapezoid);
             }
 
         }
@@ -56,11 +48,23 @@ public class MainRunner {
         double sideLength = BasicShape.getRandomLength();
         return new Square(color, sideLength);
     }
-
     public static Triangle createRandomTriangle(){
         BasicShape.Color color = BasicShape.getRandomColor();
         double sideLengthA = BasicShape.getRandomLength();
         double sideLengthB = BasicShape.getRandomLength();
         return new Triangle(color, sideLengthA, sideLengthB);
+    }
+    public static Circle createRandomCircle(){
+        BasicShape.Color color = BasicShape.getRandomColor();
+        double radius = BasicShape.getRandomLength();
+        return new Circle(color, radius);
+    }
+
+    public static Trapezoid createRandomTrapezoid(){
+        BasicShape.Color color = BasicShape.getRandomColor();
+        double sideLengthA = BasicShape.getRandomLength();
+        double sideLengthB = BasicShape.getRandomLength();
+        double height = BasicShape.getRandomLength();
+        return new Trapezoid(color, sideLengthA, sideLengthB, height);
     }
 }
