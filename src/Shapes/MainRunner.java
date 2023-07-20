@@ -20,7 +20,7 @@ public class MainRunner {
         int numberOfShapes = random.nextInt(5)+5;
 
         for (int i = 0; i < numberOfShapes; i++) {
-            int shapeType = random.nextInt(2);
+            int shapeType = random.nextInt(3);
             if(shapeType == 0){
                 BasicShape.Color color = BasicShape.getRandomColor();
                 double sideLength = BasicShape.getRandomLength();
@@ -35,6 +35,12 @@ public class MainRunner {
                 double hypotenuse = triangle.calculateHypotenuse();
                 double area = triangle.area();
                 shapes.add(new Triangle(color, sideLengthA, sideLengthB, hypotenuse, area));
+            } else if (shapeType == 2) {
+                BasicShape.Color color = BasicShape.getRandomColor();
+                double radius = BasicShape.getRandomLength();
+                Circle circle = new Circle(color, radius);
+                double area = circle.area();
+                shapes.add(new Circle(color, radius, area));
             }
 
         }
