@@ -43,28 +43,32 @@ public class MainRunner {
         return shapes;
     }
 
+    public static double getRandomLength(){
+        Random random = new Random();
+        return random.nextDouble(30);
+    }
     public static Square createRandomSquare(){
         BasicShape.Color color = BasicShape.getRandomColor();
-        double sideLength = BasicShape.getRandomLength();
+        double sideLength = getRandomLength();
         return new Square(color, sideLength);
     }
     public static Triangle createRandomTriangle(){
         BasicShape.Color color = BasicShape.getRandomColor();
-        double sideLengthA = BasicShape.getRandomLength();
-        double sideLengthB = BasicShape.getRandomLength();
+        double sideLengthA = getRandomLength();
+        double sideLengthB = getRandomLength();
         return new Triangle(color, sideLengthA, sideLengthB);
     }
     public static Circle createRandomCircle(){
         BasicShape.Color color = BasicShape.getRandomColor();
-        double radius = BasicShape.getRandomLength();
+        double radius = getRandomLength();
         return new Circle(color, radius);
     }
 
     public static Trapezoid createRandomTrapezoid(){
         BasicShape.Color color = BasicShape.getRandomColor();
-        double sideLengthA = BasicShape.getRandomLength();
-        double sideLengthB = BasicShape.getRandomLength();
-        double height = BasicShape.getRandomLength();
+        double sideLengthA = getRandomLength();
+        double sideLengthB = getRandomLength();
+        double height = getRandomLength();
         return new Trapezoid(color, sideLengthA, sideLengthB, height);
     }
 }

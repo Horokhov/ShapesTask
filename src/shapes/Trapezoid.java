@@ -6,7 +6,21 @@ public class Trapezoid extends BasicShape{
     private double height;
     @Override
     public String draw() {
-        return "Trapezoid";
+        double totalWidth = sideLengthA + (2 * (sideLengthB - sideLengthA));
+        double midPoint = totalWidth / 2;
+
+        for (int row = 0; row < height; row++) {
+            for (int col = 0; col < totalWidth; col++) {
+                if (col >= midPoint - (sideLengthB / 2) && col < midPoint + (sideLengthB / 2) + 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            midPoint++;
+        }
+        return null;
     }
     @Override
     public double area() {
@@ -23,6 +37,6 @@ public class Trapezoid extends BasicShape{
     }
     @Override
     public String toString() {
-        return String.format("Shape: Trapezoid.," + " Area:"+area()+"., Color:"+getColor()+" ., Height:"+getHeight()+";");
+        return String.format("Shape: Trapezoid.," + " Area:"+area()+"., Color:"+BasicShape.getRandomColor()+" ., Height:"+getHeight()+";"+draw());
     }
 }

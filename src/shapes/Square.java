@@ -4,7 +4,13 @@ public class Square extends BasicShape{
     private double sideLength;
     @Override
     public String draw() {
-        return "Square";
+        for (int i = 0; i < sideLength; i++) {
+            for (int j = 0; j < sideLength; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        return null;
     }
     @Override
     public double area() {
@@ -19,6 +25,6 @@ public class Square extends BasicShape{
     }
     @Override
     public String toString() {
-        return String.format("Shape: Square.," + " Area:"+area()+"., Color:"+getColor()+" ., Sidelength:"+getSideLength()+";");
+        return String.format("Shape: Square.," + " Area:"+area()+"., Color:"+BasicShape.getRandomColor()+" ., Sidelength:"+getSideLength()+";"+draw());
     }
 }

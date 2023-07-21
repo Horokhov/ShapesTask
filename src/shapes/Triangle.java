@@ -5,7 +5,13 @@ public class Triangle extends BasicShape{
     private double sideLengthB;
     @Override
     public String draw() {
-        return "Triangle";
+        for (int i = 0; i < sideLengthA; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        return null;
     }
     @Override
     public double area() {
@@ -25,6 +31,6 @@ public class Triangle extends BasicShape{
     }
     @Override
     public String toString() {
-        return String.format("Shape: Triangle.," + " Area:"+area()+"., Color:"+getColor()+" ., Hypotenuse:"+calculateHypotenuse()+";");
+        return String.format("Shape: Triangle.," + " Area:"+area()+"., Color:"+BasicShape.getRandomColor()+" ., Hypotenuse:"+calculateHypotenuse()+";"+draw());
     }
 }

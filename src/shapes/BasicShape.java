@@ -15,16 +15,7 @@ abstract class BasicShape {
     private Color color;
     public abstract String draw();
     public abstract double area();
-
-    public static double getRandomLength(){
-        Random random = new Random();
-        return random.nextDouble(30);
-    }
-
     public BasicShape(Color color){
         this.color = color;
-    }
-    public Color getColor(){
-        return color;
     }
 }
