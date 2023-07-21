@@ -3,9 +3,7 @@ package shapes;
 import java.util.Random;
 
 abstract class BasicShape {
-    enum Color{
-        BLUE, RED, PURPLE, BLACK, WHITE, YELLOW;
-    }
+    enum Color{BLUE, RED, PURPLE, BLACK, WHITE, YELLOW;}
     public static Color getRandomColor(){
         Random random = new Random();
         Color[] colors = Color.values();
