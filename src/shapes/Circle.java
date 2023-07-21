@@ -2,6 +2,7 @@ package shapes;
 
 public class Circle extends BasicShape{
     private double radius;
+
     @Override
     public String draw() {
         double diameter = 2 * radius;
@@ -21,17 +22,21 @@ public class Circle extends BasicShape{
         }
         return null;
     }
+
     @Override
     public double area() {
         return Math.PI * radius * radius;
     }
+
     public Circle(Color color, double radius) {
         super(color);
         this.radius = radius;
     }
+
     public double getRadius(){
         return radius;
     }
+
     @Override
     public String toString() {
         return String.format("Shape: Circle.," + " Area:"+area()+"., Color:"+BasicShape.getRandomColor()+" ., Radius:"+getRadius()+";"+draw());
